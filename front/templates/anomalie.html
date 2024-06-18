@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Anomalie page</title>
+  </head>
+  <body>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/start">Start</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/anomalie">Anomalie</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
+      </li>
+    </ul>
+    <h1>Hello, world!  Anomalie page</h1>
+    {% for anomaly in data %}
+    <li>{{ anomaly }}</li>
+    {% endfor %}
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Date</th>
+          <th scope="col">Timestamp</th>
+          <th scope="col">Variable</th>
+          <th scope="col">Valeur Predite</th>
+          <th scope="col">Valeur Lue</th>
+          <th scope="col">Difference</th>
+          <th scope="col">Seuil</th>
+          <th scope="col">Taux Changement</th>
+          <th scope="col">RUL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for anomaly in data %}
+        <tr>
+          <th scope="row">{{ anomaly.id }}</th>
+          <td>{{ anomaly.date }}</td>
+          <td>{{ anomaly.timestamp }}</td>
+          <td>{{ anomaly.variable }}</td>
+          <td>{{ anomaly.valeur_predite }}</td>
+          <td>{{ anomaly.valeur_lue }}</td>
+          <td>{{ anomaly.difference }}</td>
+          <td>{{ anomaly.seuil }}</td>
+          <td>{{ anomaly.taux_changement }}</td>
+          <td>{{ anomaly.rul }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
