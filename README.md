@@ -15,8 +15,7 @@
 │   ├── model_evaluation.py     # Scripts to evaluate model performance
 │   └── utils.py                # Utility functions
 ├── requirements.txt            # Python dependencies
-└── LICENSE                     # License file (MIT)
-```
+ ```
 
 Features
 
