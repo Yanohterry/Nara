@@ -1,4 +1,90 @@
-Building  a predictive monitoring app for a bag house filter system.  
-i'm in  need of help  for the user interface.  code written in python with trained lstms models that predict data such as motor current and differential pressure using several inputs as seen in code.  
-also,  in case of annomaly detection,  the backend code estimates the remaining  useful  life of the equipment.  it also stores all data in  an  SQLite3 database and uses the SMTP(simple mail transfer protocol) to alert users of annomaly  in case they're not on  the platform.  
-user interface should be able to display in charts, all data of variables used in code, pop up alerts on  the platform in case of annomaly with remaining useful life for a specific equipment in a dashboard form. 
+ 
+
+ Project Structure
+
+```
+├── README.md                   # This file
+├── data                        # Contains datasets
+│   ├── raw                     # Raw sensor data and maintenance logs
+│   └── processed               # Cleaned and feature-engineered data
+├── notebooks                   # Jupyter Notebooks for exploratory analysis and model development
+│   └── predictive_maintenance.ipynb
+├── src                         # Source code for the predictive maintenance solution
+│   ├── data_preprocessing.py   # Data cleaning and feature engineering scripts
+│   ├── model_training.py       # Code for training machine learning models
+│   ├── model_evaluation.py     # Scripts to evaluate model performance
+│   └── utils.py                # Utility functions
+├── requirements.txt            # Python dependencies
+└── LICENSE                     # License file (MIT)
+```
+
+Features
+
+- Data Preprocessing:
+  Clean raw sensor data, handle missing values, and extract features to prepare for modeling.
+
+- Exploratory Data Analysis (EDA):  
+  Visualize trends and patterns through various plots and statistical summaries.
+
+- Predictive Modeling: 
+  Apply machine learning algorithms to predict equipment failures with high accuracy.
+
+- Model Evaluation: 
+  Utilize metrics like accuracy, precision, recall, and F1-score to validate model performance.
+
+- Actionable Insights: 
+  Generate maintenance alerts and recommendations based on predictive outcomes.
+
+Installation
+
+1. Clone the Repository:
+
+   ```bash
+   git clone https://github.com/your-username/nara.git
+   cd nara
+   ```
+
+2. Install Dependencies:
+
+   Ensure you have Python 3.8 or later, then install the required packages:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+ Usage
+
+1. Data Preparation:
+
+   - Place your raw sensor data and maintenance logs in the `data/raw` folder.
+   - Run the data preprocessing script to clean and process the data:
+
+     ```bash
+     python src/data_preprocessing.py
+     ```
+
+2. Model Training:
+
+   - Train the predictive maintenance model by running:
+
+     ```bash
+     python src/model_training.py
+     ```
+
+3. Model Evaluation:
+
+   - Evaluate model performance with:
+
+     ```bash
+     python src/model_evaluation.py
+     ```
+
+4. Explore the Analysis:
+
+   - Open the Jupyter Notebook for detailed exploration:
+
+     ```bash
+     jupyter notebook notebooks/predictive_maintenance.ipynb
+     ```
+
+ 
